@@ -59,17 +59,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="container">
         <div class="intro-text">
 
-            <form>
+            <form action="<?php echo base_url();?>users/member_register" method="POST">
                 <h1>Member Registration</h1>
                 <div class="form-row">
                     <div class="form-group col-md-4">
-                        <label for="inputState">Title</label>
-                        <select id="inputState" class="form-control">
-                            <option selected>Mr</option>
-                            <option selected>Ms</option>
-                            <option selected>Mrs</option>
-                            <option selected>Rev</option>
-                            <option selected>Other</option>
+                        <label for="title">Title</label>
+                        <select id="title" class="form-control" name="title">
+                            <option name="mr" selected>Mr</option>
+                            <option name="ms">Ms</option>
+                            <option name="mrs">Mrs</option>
+                            <option name="rev">Rev</option>
+                            <option name="other">Other</option>
                         </select>
                     </div>
 
@@ -132,28 +132,38 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <label for="res_city">City</label>
                         <input type="text" class="form-control" name="res_city" id="res_city" placeholder="City">
                     </div>
-                    <div class="form-group col-md-3">
-                        <label for="res_district">District</label>
-                        <input type="text" class="form-control" name="res_district" id="res_district" placeholder="District">
-                    </div>
+                        <div class="form-group col-md-3">
+                            <label for="district">District</label>
+                            <select id="district" class="form-control" name="res_district">
+                                <option selected value="Ampara">Ampara</option>
+                                <option value="Anuradhapura">Anuradhapura</option>
+                                <option value="">Badulla</option>
+                                <option value="Batticaloa">Batticaloa</option>
+                                <option value="Colombo">Colombo</option>
+                                <option value="Galle">Galle</option>
+                                <option value="Gampaha">Gampaha</option>
+                                <option value="Hambantota">Hambantota</option>
+                                <option value="Jaffna">Jaffna</option>
+                                <option value="Kalutara">Kalutara</option>
+                                <option value="Kandy">Kandy</option>
+                                <option value="Kilinochchi">Kilinochchi</option>
+                                <option value="Kurunegala">Kurunegala</option>
+                                <option value="Mannar">Mannar</option>
+                                <option value="Matale">Matale</option>
+                                <option value="Matara">Matara</option>
+                                <option value="Monaragala">Monaragala</option>
+                                <option value="Mullaitivu">Mullaitivu</option>
+                                <option value="Nuwara Eliya">Nuwara Eliya</option>
+                                <option value="Polonnaruwa">Polonnaruwa</option>
+                                <option value="Puttalam">Puttalam</option>
+                                <option value="Ratnapura">Ratnapura</option>
+                                <option value="Trincomalee">Trincomalee</option>
+                                <option value="Vavuniya">Vavuniya</option>
+
+                            </select>
                 </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputCity">Employee Designation</label>
-                        <input type="text" class="form-control" id="inputCity">
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="inputState">State</label>
-                        <select id="inputState" class="form-control">
-                            <option selected>Choose...</option>
-                            <option>...</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label for="inputZip">Zip</label>
-                        <input type="text" class="form-control" id="inputZip">
-                    </div>
                 </div>
+
                 <div class="form-row">
                     <div class="form-group col-md-3">
                         <label for="inputOffice_1">Office Address</label>
@@ -169,7 +179,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                     <div class="form-group col-md-3">
                         <label for="Office_district">District</label>
-                        <input type="text" class="form-control" name="Office_district" id="Office_district" placeholder="District">
+                        <select id="Office_district" class="form-control" name="Office_district">
+                            <option selected value="Ampara">Ampara</option>
+                            <option value="Anuradhapura">Anuradhapura</option>
+                            <option value="">Badulla</option>
+                            <option value="Batticaloa">Batticaloa</option>
+                            <option value="Colombo">Colombo</option>
+                            <option value="Galle">Galle</option>
+                            <option value="Gampaha">Gampaha</option>
+                            <option value="Hambantota">Hambantota</option>
+                            <option value="Jaffna">Jaffna</option>
+                            <option value="Kalutara">Kalutara</option>
+                            <option value="Kandy">Kandy</option>
+                            <option value="Kilinochchi">Kilinochchi</option>
+                            <option value="Kurunegala">Kurunegala</option>
+                            <option value="Mannar">Mannar</option>
+                            <option value="Matale">Matale</option>
+                            <option value="Matara">Matara</option>
+                            <option value="Monaragala">Monaragala</option>
+                            <option value="Mullaitivu">Mullaitivu</option>
+                            <option value="Nuwara Eliya">Nuwara Eliya</option>
+                            <option value="Polonnaruwa">Polonnaruwa</option>
+                            <option value="Puttalam">Puttalam</option>
+                            <option value="Ratnapura">Ratnapura</option>
+                            <option value="Trincomalee">Trincomalee</option>
+                            <option value="Vavuniya">Vavuniya</option>
+
+                        </select>
                     </div>
                 </div>
                 <div class="form-row">
@@ -208,7 +244,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <option value="tourism" selected>Tourism</option>
                             <option value="banking">Banking</option>
                             <option value="manufacturing">Manufacturing</option>
-                            <option value="insurance">Insuarance</option>
+                            <option value="insurance">Insurance</option>
                         </select>
                     </div>
 

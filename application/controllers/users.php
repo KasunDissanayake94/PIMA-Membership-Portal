@@ -69,6 +69,34 @@ class Users extends CI_Controller {
 
 
     }
+    public function member_register(){
+        $title = $this->input->post('title');
+        $first_name = $this->input->post('first_name');
+        $surname = $this->input->post('surname');
+        $full_name = $this->input->post('full_name');
+        $nic = $this->input->post('nic');
+        $passport_no= $this->input->post('passport_no');
+        $mobile_1 = $this->input->post('mobile_1');
+        $mobile_2 = $this->input->post('mobile_2');
+        $personal_email = $this->input->post('personal_email');
+        $office_email = $this->input->post('office_email');
+        $res_address1 = $this->input->post('res_address1');
+        $res_address2 = $this->input->post('res_address2');
+        $res_city = $this->input->post('res_city');
+        $res_district= $this->input->post('res_district');
+        $Office_address1 = $this->input->post('Office_address1');
+        $Office_address2 = $this->input->post('Office_address2');
+        $Office_city = $this->input->post('Office_city');
+        $Office_district = $this->input->post('Office_district');
+        $enrolment = $this->input->post('enrolment');
+        $completion = $this->input->post('completion');
+        $graduation = $this->input->post('graduation');
+        $student_no = $this->input->post('student_no');
+        $speciality = $this->input->post('speciality');
+        $experience = $this->input->post('experience');
+        echo 'Hello';
+        die();
+    }
 
     public function logout(){
         //destroy the session
