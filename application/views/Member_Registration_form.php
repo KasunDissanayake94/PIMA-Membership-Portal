@@ -121,25 +121,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-3">
-                        <label for="address1">Residence Address</label>
-                        <input type="text" class="form-control" name="address1" id="inputOEmail" placeholder="Address 1">
+                        <label for="res_address1">Residence Address</label>
+                        <input type="text" class="form-control" name="res_address1" id="res_address1" placeholder="Address 1">
                     </div>
                     <div class="form-group col-md-3">
-                        <label for="address2">Residence Address</label>
-                        <input type="text" class="form-control" name="address2" id="inputOEmail" placeholder="Address 2">
+                        <label for="res_address2">Residence Address</label>
+                        <input type="text" class="form-control" name="res_address2" id="res_address2" placeholder="Address 2">
                     </div>
                     <div class="form-group col-md-3">
-                        <label for="city">City</label>
-                        <input type="text" class="form-control" name="city" id="city" placeholder="City">
+                        <label for="res_city">City</label>
+                        <input type="text" class="form-control" name="res_city" id="res_city" placeholder="City">
                     </div>
                     <div class="form-group col-md-3">
-                        <label for="district">District</label>
-                        <input type="text" class="form-control" name="district" id="district" placeholder="District">
+                        <label for="res_district">District</label>
+                        <input type="text" class="form-control" name="res_district" id="res_district" placeholder="District">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputCity">City</label>
+                        <label for="inputCity">Employee Designation</label>
                         <input type="text" class="form-control" id="inputCity">
                     </div>
                     <div class="form-group col-md-4">
@@ -154,15 +154,76 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <input type="text" class="form-control" id="inputZip">
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                        <label class="form-check-label" for="gridCheck">
-                            Check me out
-                        </label>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="inputOffice_1">Office Address</label>
+                        <input type="text" class="form-control" name="Office_address1" id="inputOffice_1" placeholder="Address 1">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputOOffice_2">Office Address</label>
+                        <input type="text" class="form-control" name="Office_address2" id="inputOOffice_2" placeholder="Address 2">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="Office_city">City</label>
+                        <input type="text" class="form-control" name="Office_city" id="Office_city" placeholder="City">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="Office_district">District</label>
+                        <input type="text" class="form-control" name="Office_district" id="Office_district" placeholder="District">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Sign in</button>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="enrolment">Year of Enrolment at PIM</label>
+                        <input type="date" class="form-control" name="enrolment" id="enrolment" placeholder="Year of Enrolment">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="completion">Year of Completion at PIM</label>
+                        <input type="date" class="form-control" name="completion" id="completion" placeholder="Year of Completion">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="graduation">Year of Graduation </label>
+                        <input type="date" class="form-control" name="graduation" id="graduation" placeholder="Year of Graduation">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="student_no">PIM Student No</label>
+                        <input type="text" class="form-control" name="student_no" id="student_no" placeholder="PIM Student No">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputState">Speciality</label>
+                        <select id="inputState" class="form-control" name="speciality">
+                            <option value="finance" selected>Finance</option>
+                            <option value="it">IT</option>
+                            <option value="tourism">Tourism</option>
+                            <option value="hr">HR</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputState">Experienced Industries</label>
+                        <select id="inputState" class="form-control" name="experience">
+                            <option value="tourism" selected>Tourism</option>
+                            <option value="banking">Banking</option>
+                            <option value="manufacturing">Manufacturing</option>
+                            <option value="insurance">Insuarance</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <input type="file" name="Upload the Photo">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="file" name="Link to Upload the Payment Confirmation">
+                    </div>
+
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Register</button>
             </form>
 
         </div>
