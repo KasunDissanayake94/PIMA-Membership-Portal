@@ -22,17 +22,18 @@
             <a class="dropdown-item" href="<?php echo base_url();?>index.php/adminController/userRegistration">Register User</a>
             <a class="dropdown-item" href="<?php echo base_url();?>index.php/adminController/manageUser">Manage User</a>
             <a class="dropdown-item" href="<?php echo base_url();?>index.php/adminController/assignUsers">Assign User Role</a>
+            <a class="dropdown-item" href="<?php echo base_url();?>index.php/adminController/assignUsers">Member Access</a>
           </div>
     </li>
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-id-card"></i>
-            <span>Students</span>
+            <span>Members</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-            <a class="dropdown-item" href="<?php echo base_url();?>index.php/adminController/addStudent">Add Student</a>
-            <a class="dropdown-item" href="<?php echo base_url();?>index.php/adminController/importStudents">Import Student List</a>
-            <a class="dropdown-item" href="<?php echo base_url();?>index.php/adminController/manageStudents">Manage Students</a>
+            <a class="dropdown-item" href="<?php echo base_url();?>index.php/adminController/addStudent">Add Member</a>
+            <a class="dropdown-item" href="<?php echo base_url();?>index.php/adminController/importStudents">Import Member List</a>
+            <a class="dropdown-item" href="<?php echo base_url();?>index.php/adminController/manageStudents">Manage Members</a>
         </div>
     </li>
 

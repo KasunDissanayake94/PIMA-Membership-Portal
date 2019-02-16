@@ -31,7 +31,9 @@
         <div class="card-header">Login</div>
         <div class="card-body">
             <?php if($this->session->flashdata('login_failed')):  ?>
+            <div class="alert alert-danger" role="alert">
                 <?php echo $this->session->flashdata('login_failed');?>
+            </div>
             <?php endif;?>
             <form action="<?php echo base_url();?>users/login" method="POST">
                 <div class="form-group">

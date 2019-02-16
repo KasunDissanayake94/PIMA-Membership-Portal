@@ -57,12 +57,12 @@ class Users extends CI_Controller {
             }else{
 
 
-                $this->session->set_flashdata('login_failed','Username or Password is incorrect... Try again..');
+                $this->session->set_flashdata('login_failed','Invalid Username or Password');
                 redirect('Welcome/login');
             }
 
         }else{
-            $this->session->set_flashdata('login_failed','Username or Password is incorrect... Try again..');
+            $this->session->set_flashdata('login_failed','Invalid Username or Password');
             redirect('Welcome/login');
         }
 
@@ -84,18 +84,70 @@ class Users extends CI_Controller {
         $res_address2 = $this->input->post('res_address2');
         $res_city = $this->input->post('res_city');
         $res_district= $this->input->post('res_district');
+        $res_phone= $this->input->post('res_phone');
+        $designation= $this->input->post('designation');
         $Office_address1 = $this->input->post('Office_address1');
         $Office_address2 = $this->input->post('Office_address2');
         $Office_city = $this->input->post('Office_city');
         $Office_district = $this->input->post('Office_district');
+        $country = $this->input->post('country');
         $enrolment = $this->input->post('enrolment');
         $completion = $this->input->post('completion');
         $graduation = $this->input->post('graduation');
         $student_no = $this->input->post('student_no');
         $speciality = $this->input->post('speciality');
         $experience = $this->input->post('experience');
-        echo 'Hello';
-        die();
+
+        $member_image = 'x.jpg';
+        $payment_image = 'y.jpg';
+
+
+
+        $member_data = array(
+            'title' => $title,
+            'first_name ' => $first_name,
+            'surname' => $surname,
+            'name_in_full' => $full_name,
+            'nic_no' => $nic,
+            'passport_no' => $passport_no,
+            'mobile_1' => $mobile_1,
+            'mobile_2' => $mobile_2,
+            'personal_email' => $personal_email,
+            'official_email' => $office_email,
+            'residence_address_1' => $res_address1,
+            'residence_address_2' => $res_address2,
+            'residence_city' => $res_city,
+            'resicence_district' => $res_district,
+            'residence_phone_no' => $designation,
+            'designation' => $designation,
+            'official_address_1' => $Office_address1,
+            'official_address_2' => $Office_address2,
+            'official_city' => $Office_city,
+            'official_district' => $Office_district,
+            'country' => $country,
+            'enrolement_year_pim' => $enrolment,
+            'completion_year_pim' => $completion,
+            'year_of_graduation' => $graduation,
+            'pim_student_no' => $student_no,
+            'speciality' => $speciality,
+            'experienced_industries' => $experience,
+            'member_image' => $member_image,
+            'payment_image' => $payment_image
+
+        );
+        $this->load->model('user_model');
+        $result = $this->user_model->register_member($member_data);
+
+        if($result){
+            $this->session->set_flashdata('member_success','Successfully Registered to the System. Membership Pending...');
+            $this->register_member();
+
+        }else{
+            $this->session->set_flashdata('member_failed','Failed to Register to the System');
+            $this->register_member();
+
+        }
+
     }
 
     public function logout(){

@@ -14,6 +14,13 @@ class User_model extends CI_Model {
             return false;
         }
     }
+    //Register New Members
+    public function register_member($arr){
+        $this->db->insert('member',$arr);
+
+        return ($this->db->affected_rows() != 1) ? false : true;
+
+    }
     public function get_Image($user_id){
         $this->db->where('id',$user_id);
         $this->db->select('img_url');
