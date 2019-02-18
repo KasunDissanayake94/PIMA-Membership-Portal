@@ -23,11 +23,11 @@ class User_model extends CI_Model {
     }
     public function get_Image($user_id){
         $this->db->where('id',$user_id);
-        $this->db->select('img_url');
+        $this->db->select('imgUrl');
         $user_data = $this->db->get('user');
         if($user_data->num_rows() > 0)
         {
-            return $user_data->row(0)->img_url;
+            return $user_data->row(0)->imgUrl;
         }
         return false;
     }
