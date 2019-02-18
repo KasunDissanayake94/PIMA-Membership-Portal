@@ -98,8 +98,32 @@ class Users extends CI_Controller {
         $speciality = $this->input->post('speciality');
         $experience = $this->input->post('experience');
 
-        $member_image = 'x.jpg';
-        $payment_image = 'y.jpg';
+        // working with img starts from here baby...
+           // upload profile picture
+            $config['upload_path']='./uploads';
+            $config['allowed_types']='*';
+            $this->load->library('upload',$config);
+
+            if($this->upload->do_upload('file_name')){
+                $file_name=$this->upload->data();
+                    $member_image =$file_name['file_name'];  
+            }else{
+                   $member_image ="profile_img";
+            }
+
+
+            // upload payment image
+            $config['upload_path']='./uploads';
+            $config['allowed_types']='*';
+            $this->load->library('upload',$config);
+            if($this->upload->do_upload('file_name_payment')){
+                $file_name=$this->upload->data();
+                    $payment_image =$file_name['file_name'];  
+            }else{
+                   $payment_image ="payment_img";
+            }
+
+  
 
 
 

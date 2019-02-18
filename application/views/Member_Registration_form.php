@@ -40,7 +40,9 @@
                 </div>
             <?php endif;?>
 
-            <form  action="<?php echo base_url();?>users/member_register" method="POST">
+            <!-- <form  action="<?php echo base_url();?>users/member_register" method="POST"> -->
+
+                <?php echo form_open_multipart('users/member_register');?>
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="title">Title</label>
@@ -397,19 +399,20 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <input type="file" name="Upload the Photo">
+                        <label>Profile Picture</label>
+                        <input type="file" name="file_name">
                     </div>
                     <div class="form-group col-md-6">
-                        <input type="file" name="Link to Upload the Payment Confirmation">
+                      <label>Payment Image</label>
+                        <input type="file" name="file_name_payment">
                     </div>
-
                 </div>
                 <div>
                     <button  type="submit" class="btn btn-primary">Register Member</button>
 
                 </div>
 
-            </form>
+          <?php echo form_close();?>
 
         </div>
     </div>
