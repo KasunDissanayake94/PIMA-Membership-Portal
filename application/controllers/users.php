@@ -113,8 +113,6 @@ class Users extends CI_Controller {
 
 
             // upload payment image
-            $config['upload_path']='./uploads';
-            $config['allowed_types']='*';
             $this->load->library('upload',$config);
             if($this->upload->do_upload('file_name_payment')){
                 $file_name=$this->upload->data();
