@@ -131,6 +131,31 @@ $this->load->view('navbar');
                         }
                         ?>
                     </form>
+                            <div class="col-md-4 ">
+                                <div class="col-md-12">
+                                    <?php if($this->session->flashdata('image_upload_success')):  ?>
+                                        <div class="alert alert-success" role="alert">
+                                            <?php echo $this->session->flashdata('image_upload_success');?>
+                                        </div>
+                                    <?php endif;?>
+
+                                    <?php if($this->session->flashdata('image_upload_failed')):  ?>
+                                        <div class="alert alert-danger" role="alert">
+                                            <?php echo $this->session->flashdata('image_upload_failed');?>
+                                        </div>
+                                    <?php endif;?>
+                                    <form action="<?php echo base_url();?>users/changeImage?image=<?php echo $perreq->imgUrl?>" method="POST">
+                                        <div class="form-group text-center">
+                                            <img id='img-upload'style="width: 300px; margin-top: 2%" src="<?php echo base_url();?>assets/img/profileImages/<?php echo $perreq->imgUrl?>">
+                                            <br>
+                                            <br>
+                                            <button type="submit" class="btn btn-outline-primary text-center">
+                                                Upload Image</button>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
 
                         </div>
 

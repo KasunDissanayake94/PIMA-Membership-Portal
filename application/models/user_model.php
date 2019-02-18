@@ -68,7 +68,7 @@ class User_model extends CI_Model {
     //Get the details of logged user to edit own profile
     public function edit_Profile($user_id){
         $this->db->where('id',$user_id);
-        $this->db->select('id,first_name,last_name,email,type,contact_number');
+        $this->db->select('id,first_name,last_name,email,type,contact_number,imgUrl');
         $user_data = $this->db->get('user');
         if($user_data->num_rows() > 0)
         {
@@ -112,7 +112,8 @@ class User_model extends CI_Model {
             'imgUrl'=>$file_name,
 
         );
-        $this->db->where('uid', $user_id);
+
+        $this->db->where('id', $user_id);
         $this->db->update('user', $data);
         // modify session
         $this->session->set_userdata('imgUrl',$file_name);

@@ -42,7 +42,7 @@ $this->load->view('navbar');
                     <div class="form-group">
                         <div class="row">
                         <div class="col-md-6">
-                            <img id='img-upload' style='margin: 5%' src="<?php echo base_url();?>assets/img/profile_images/user_profile.png">
+                            <img id='img-upload' style='margin: 5%' src="<?php echo base_url();?>assets/img/profileImages/user.png">
                         </div>
                         <div class="col-md-6 text-center">
                             <br>

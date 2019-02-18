@@ -26,7 +26,7 @@
                 <img style="border-radius: 50%;height: 25px;
   width: 25px;
   background-color: #bbb;
-  border-radius: 50%;" src="<?php echo base_url();?>assets/img/event.png">
+  border-radius: 50%;" src="<?php echo base_url();?>assets/img/profileImages/<?php echo $this->session->userdata('imgUrl');?>">
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                 <a class="dropdown-item btn-outline-primary" href="<?php echo base_url();?>index.php/users/editProfile">Edit Profile</a>

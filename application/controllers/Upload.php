@@ -15,7 +15,7 @@ class Upload extends CI_Controller {
 
     public function do_upload()
     {
-        $config['upload_path']          = './assets/img/profile_images/';
+        $config['upload_path']          = './assets/img/profileImages/';
         $config['allowed_types']        = 'gif|jpg|png';
         $config['max_size']             = 1000;
         $config['max_width']            = 2000;
@@ -34,11 +34,11 @@ class Upload extends CI_Controller {
             $data = array('upload_data' => $this->upload->data());
             //Update image url data here
             $file_name = $this->upload->data('file_name');
-            $email = $this->session->userdata('email');
+            $user_id = $this->session->userdata('user_id');
             $this->load->model('user_model');
             //Upload and update Image url in database
-            if($this->user_model->upload_image($file_name,$email)){
-                $this->session->set_flashdata('image_upload_success','Image Upload Successfully!');
+            if($this->user_model->upload_image($file_name,$user_id)){
+                $this->session->set_flashdata('image_upload_success','Image Successfully Uploaded!');
                 redirect("users/editProfile");
             }else{
                 $this->session->set_flashdata('image_upload_failed','Image Upload Failed');
