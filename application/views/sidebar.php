@@ -22,7 +22,6 @@
             <a class="dropdown-item" href="<?php echo base_url();?>index.php/adminController/userRegistration">Register User</a>
             <a class="dropdown-item" href="<?php echo base_url();?>index.php/adminController/manageUser">Manage User</a>
             <a class="dropdown-item" href="<?php echo base_url();?>index.php/adminController/assignUsers">Assign User Role</a>
-            <a class="dropdown-item" href="<?php echo base_url();?>index.php/adminController/assignUsers">Member Access</a>
           </div>
     </li>
     <li class="nav-item dropdown">
@@ -33,7 +32,7 @@
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
             <a class="dropdown-item" href="<?php echo base_url();?>index.php/adminController/addStudent">Add Member</a>
             <a class="dropdown-item" href="<?php echo base_url();?>index.php/adminController/importStudents">Import Member List</a>
-            <a class="dropdown-item" href="<?php echo base_url();?>index.php/adminController/manageMembershipRequests">Manage Membership Requests</a>
+            <a class="dropdown-item" href="<?php echo base_url();?>index.php/adminController/manageMembershipRequests"> Membership Requests</a>
         </div>
     </li>
 

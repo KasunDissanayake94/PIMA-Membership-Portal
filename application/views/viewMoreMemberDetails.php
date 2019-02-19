@@ -29,7 +29,7 @@ $this->load->view('navbar');
                 <li class="breadcrumb-item">
                     <a href="#">Dashboard</a>
                 </li>
-                <li class="breadcrumb-item active">Edit Profile</li>
+                <li class="breadcrumb-item active">View Requests</li>
             </ol>
 
 
@@ -38,11 +38,11 @@ $this->load->view('navbar');
             <div class="card mb-3">
                 <div class="card-header">
                     <i class="fas fa-chart-area"></i>
-                    Edit Profile Form</div>
+                    Member Requests</div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-8">
-                            <form action="<?php echo base_url();?>users/editUserProfile" method="POST">
+                            <form action="<?php echo base_url();?>MemberController/registerMemberToSystem" method="POST">
 
 
 
@@ -52,8 +52,12 @@ $this->load->view('navbar');
                                 {
                                     echo "
                                 <div class=\"form-row\">
+                      <input type='text' class='form-control' name='imgUrl' value='$perreq->member_image' hidden readonly placeholder='imgUrl''>
+                      <input type='text' class='form-control' name='id' value='$perreq->id' hidden readonly placeholder='ID''>
                     <div class=\"form-group col-md-4\">
                         <label for=\"title\">Title</label>
+                      <input type='text' class='form-control' name='title' value='$perreq->title' readonly placeholder='Title''>
+
                         
                     </div>
 
@@ -194,6 +198,18 @@ $this->load->view('navbar');
                     </div>
 
                 </div>
+                <div class='form-row'>
+                <div class=\"col-md-12\">
+                                <h1>Payment Image </h1>
+                                <img style=\"width: 300px; margin-top: 2%\" src='http://localhost/PIMA-Membership-Portal/uploads/$perreq->payment_image'>
+
+                            </div>
+                </div>
+                <div class='form-row'>
+                <div class='col-md-12 text-center'>
+                <button  type=\"submit\" class=\"btn btn-success\">Register Member</button>
+                </div>
+                </div>
                 </div>
                             ";
 
@@ -206,11 +222,7 @@ $this->load->view('navbar');
 
                                 </div>
                             </div>
-                            <div class="col-md-12">
-                                <h1>Payment Image </h1>
-                                <img style="width: 300px; margin-top: 2%" src="<?php echo base_url();?>uploads/<?php echo $perreq->payment_image?>">
 
-                            </div>
 
                         </div>
 
