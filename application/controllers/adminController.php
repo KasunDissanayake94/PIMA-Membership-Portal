@@ -1233,6 +1233,20 @@ class adminController extends CI_Controller {
 
         $this->load->view('SubGroups', $data);
     }
+    public function manageMembershipRequests(){
+        $this->load->model('adminModel');
+        $data['requests'] = $this->adminModel->getMembershipRequests();
+        $this->load->view('requestMembership',$data);
+
+    }
+    public function RegisterNewMember(){
+        if($this->input->get()) {
+            $id = $this->input->get('user_id');
+            $this->load->model('adminModel');
+            $data['member'] = $this->adminModel->getMemberDetails($id);
+            $this->load->view('viewMoreMemberDetails',$data);
+        }
+    }
 
 
 

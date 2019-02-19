@@ -846,6 +846,42 @@ class AdminModel extends CI_Model {
         $query = $this->db->get();
         return $query;
     }
+    public function getMembershipRequests(){
+        $user_data = $this->db->query('SELECT 
+            *
+        FROM
+            member
+        ');
+
+        if($this->db->affected_rows() != 0){
+            foreach ($user_data->result() as $row)
+            {
+                $data[] = $row;
+            }
+            return $data;
+        }
+        else{
+            return false;
+        }
+    }
+    public function getMemberDetails($id){
+        $this->db->select('*');
+        $this->db->from('member');
+        $this->db->where('id',$id);
+        $user_data = $this->db->get();
+
+        if($user_data->num_rows() > 0)
+        {
+            // we will store the results in the form of class methods by using $q->result()
+            // if you want to store them as an array you can use $q->result_array()
+            foreach ($user_data->result() as $row)
+            {
+                $data[] = $row;
+            }
+            return $data;
+        }
+
+    }
 
 
 

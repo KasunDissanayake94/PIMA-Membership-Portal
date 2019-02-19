@@ -33,7 +33,7 @@
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
             <a class="dropdown-item" href="<?php echo base_url();?>index.php/adminController/addStudent">Add Member</a>
             <a class="dropdown-item" href="<?php echo base_url();?>index.php/adminController/importStudents">Import Member List</a>
-            <a class="dropdown-item" href="<?php echo base_url();?>index.php/adminController/manageStudents">Manage Members</a>
+            <a class="dropdown-item" href="<?php echo base_url();?>index.php/adminController/manageMembershipRequests">Manage Membership Requests</a>
         </div>
     </li>
 
